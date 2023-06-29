@@ -1,0 +1,25 @@
+package common;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class JDBConnPool {
+	public Connection con;
+	public Statement stmt;
+	public PreparedStatement psmt;
+	public ResultSet rs;
+	
+	public void close() {
+		try {
+			if(rs!=null)rs.close();
+			if(stmt!=null) stmt.close();
+			if(psmt!=null)psmt.close();
+			if(con!=null) con.close();
+			System.out.println("DB CP connection 반납");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

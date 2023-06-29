@@ -1,0 +1,25 @@
+package m2board;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/m2board/edit.do")
+public class EditController extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String idx=req.getParameter("idx");
+		MBoardDAO dao=new MBoardDAO();
+		MBoardDTO dto=dao.getView(idx);
+		req.setAttribute("dto", dto);
+		req.getRequestDispatcher("/14M2Board/Edit.jsp").forward(req, resp);
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+}

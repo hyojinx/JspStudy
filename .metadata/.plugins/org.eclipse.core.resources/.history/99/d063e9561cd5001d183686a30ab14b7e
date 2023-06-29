@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="common.Person" %>
+<%@ page import="java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EL Collection</title>
+</head>
+<body>
+	<h2>List</h2>
+<%
+	List<Object> alist = new ArrayList<Object>();
+	alist.add("한양");
+	alist.add(new Person("이방원",45));
+	pageContext.setAttribute("city", alist);
+%>
+	<ul>
+		<li>${city[0]}</li>
+		<li>${city[1].name},${city[1].age}</li>
+		<li>${city[2]}</li>
+	</ul>
+</body>
+</html>

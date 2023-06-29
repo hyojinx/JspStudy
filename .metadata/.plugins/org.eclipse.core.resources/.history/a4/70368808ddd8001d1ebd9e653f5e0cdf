@@ -1,0 +1,10 @@
+package m2board;
+
+import common.JDBConnPool;
+
+public class MBoardDAO extends JDBConnPool{
+	public MBoardDAO() {
+		super();
+	}
+
+}

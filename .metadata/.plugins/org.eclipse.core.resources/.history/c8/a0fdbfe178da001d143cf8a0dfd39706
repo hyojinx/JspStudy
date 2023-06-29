@@ -1,0 +1,25 @@
+package api;
+import java.io.*;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/NaverSearchAPI.do")
+public class SearchAPI extends HttpServlet{
+	//네이버 api guide 예제를 참조
+	//인증 정보 설정
+	 String clientId = "wc1ni5D2KLJbCQq_8Fly"; //애플리케이션 클라이언트 아이디
+     String clientSecret = "b7NXDpAF5o"; //애플리케이션 클라이언트 시크릿
+     
+     //검색 조건 설정
+     int startNum=0;
+     String text = null; //검색어
+     try {
+    	 
+    	 String searchStr = req.getparameter("keyword");
+         text = URLEncoder.encode("그린팩토리", "UTF-8");
+     } catch (UnsupportedEncodingException e) {
+         throw new RuntimeException("검색어 인코딩 실패",e);
+     }
+	
+}

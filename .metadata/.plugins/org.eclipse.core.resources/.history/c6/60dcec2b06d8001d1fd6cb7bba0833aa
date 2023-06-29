@@ -1,0 +1,21 @@
+package fileUpDown;
+
+import java.util.List;
+
+public class MyFileDao extends JDBConnPool{
+	//새로운 게시물을 입력합니다.
+	public int insertFile(MyFileDto dto) {
+		int applyResult =0;
+		try {
+			String query = "INSERT INTO myfile ( "
+					+" IDX, NAME, TITLE, CATE, OFILE, NFILE) "
+					+" VALUES ( "
+					+" SEQ_BOARD_NUM.NEXTVAL, ?, ?, ?, ?, ?)";
+			
+			psmt = con.prepareStatement(query);
+			psmt.se
+				
+		}
+	}
+
+}
